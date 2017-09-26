@@ -2,36 +2,59 @@ window.onload = function () {
 	const emailForm = document.getElementById("emailForm");
 	const optionsCheckboxes = document.getElementById("options");
 	const radios = optionsCheckboxes.querySelectorAll(".checkbox");
+	const rekvEnable = document.getElementById("rekvEnable");
+	const rekv = document.getElementById("rekv");
 	function showOptions(element) {
 		element.style.display = "block";
+		if (element.id = rekv) {
+			element.required = true;
+		}
 		console.log("showing...");
 	}
 	function hideOptions(element) {
 		element.style.display = "none";
+		if (element.id = rekv) {
+			element.required = false;
+		}
 		console.log("hiding...");
 	}
-	function init () {
+	function init() {
 		let switchId = optionsCheckboxes.querySelector(".checkbox:checked").id;
 		let pp = document.getElementById("pp");
-		let rekv = document.getElementById("rekv");
+		rekvEnable.checked = false;
+		hideOptions(rekv);
+		// rekv.required = false;
 		switch(switchId) {
 			case "checkbox1":
 				pp.disabled = true;
-				rekv.disabled = true;
+				rekvEnable.disabled = true;
+				rekvEnable.checked = false;
+				hideOptions(rekv);
 				break;
 			case "checkbox2":
 			case "checkbox3":
 			case "checkbox4":
 				pp.disabled = false;
-				rekv.disabled = false;
+				rekvEnable.disabled = false;
 				break;
 			case "checkbox5":
 				pp.disabled = true;
-				rekv.disabled = false;
+				rekvEnable.disabled = false;
 				break;
 		}
 	}
-
+	function enablingOfRekvTextarea() {
+		if (rekvEnable.checked) {
+			showOptions(rekv);
+		} else {
+			hideOptions(rekv);
+		}
+	}
+	function showResults() {
+		let results = document.getElementById("results");
+		hideOptions(optionsCheckboxes);
+		showOptions(results);
+	}
 	emailForm.rcptAddr.addEventListener("click", function() {
 		showOptions(optionsCheckboxes);
 	});
@@ -45,4 +68,6 @@ window.onload = function () {
 	for (let i = 0; i < radios.length; i++) {
 		radios[i].addEventListener("click", init);
 	}
+	rekvEnable.addEventListener("change", enablingOfRekvTextarea);
+	emailForm.addEventListener("submit", showResults);
 }
