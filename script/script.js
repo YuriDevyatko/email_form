@@ -23,13 +23,11 @@ window.onload = function () {
 		let pp = document.getElementById("pp");
 		rekvEnable.checked = false;
 		hideOptions(rekv);
-		// rekv.required = false;
 		switch(switchId) {
 			case "checkbox1":
 				pp.disabled = true;
 				rekvEnable.disabled = true;
 				rekvEnable.checked = false;
-				hideOptions(rekv);
 				break;
 			case "checkbox2":
 			case "checkbox3":
