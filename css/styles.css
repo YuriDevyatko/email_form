@@ -1,0 +1,10 @@
+.options {
+	display: none;
+}
+.options label {
+	display: block;
+}
+
+iframe {
+	display: none;
+}

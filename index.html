@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sending Applications</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<section class="email">
+	<form action="#" id="emailForm" method="post" name="emailForm" target="sms">
+		<label>Кому: <input type="email" id="rcptAddr" name="rcptAddr" placeholder="Email..." required></label>
+		<label>От:
+			<select id="senderAddr" name="senderAddr" required>
+				<option selected></option>
+				<option value="operator1@easypay.ua">operator1@easypay.ua</option>
+				<option value="operator2@easypay.ua">operator2@easypay.ua</option>
+				<option value="operator3@easypay.ua">operator3@easypay.ua</option>
+				<option value="operator4@easypay.ua">operator4@easypay.ua</option>
+				<option value="operator5@easypay.ua">operator5@easypay.ua</option>
+				<option value="operator6@easypay.ua">operator6@easypay.ua</option>
+				<option value="operator7@easypay.ua">operator7@easypay.ua</option>
+				<option value="operator8@easypay.ua">operator8@easypay.ua</option>
+				<option value="operator9@easypay.ua">operator9@easypay.ua</option>
+				<option value="operator10@easypay.ua">operator10@easypay.ua</option>
+				<option value="operator12@easypay.ua">operator11@easypay.ua</option>
+				<option value="operator12@easypay.ua">operator12@easypay.ua</option>
+				<option value="operator13@easypay.ua">operator13@easypay.ua</option>
+			</select>
+		</label>
+		<label>Имя: <input type="text" id="senderName" name="senderName" placeholder="Оператор EasyPay.UA"></label>
+		<input id="send" type="submit">
+
+		<div class="options" id="options">
+			<label><input type="radio" name="checkbox" id="checkbox1" value="checked1"> 1. Свободная форма</label>
+			<label><input type="radio" name="checkbox" id="checkbox2" value="checked2"> 2. Верные реквизиты (другие)</label>
+			<label><input type="radio" name="checkbox" id="checkbox3" value="checked3"> 3. Возврат на кошелек</label>
+			<label><input type="radio" name="checkbox" id="checkbox4" value="checked4"> 4. Возврат на мобильний Киевстар</label>
+			<label><input type="radio" name="checkbox" id="checkbox5" value="checked5" checked> 5. Повторное проведение</label>
+
+			<input type="text" class="pp" id="pp" name="pp" placeholder="Платежное поручение" required disabled>
+			<textarea id = "rekv" name = "rekv" title="реквизиты - только для вложений 2-5" required></textarea>
+		</div>
+	</form>
+	<iframe name="sms"></iframe>
+</section>
+<script src="script/script.js"></script>
+</body>
+</html>
