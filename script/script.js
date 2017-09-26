@@ -2,9 +2,13 @@ window.onload = function () {
 	const emailForm = document.getElementById("emailForm");
 	const optionsCheckboxes = document.getElementById("options");
 	const radios = optionsCheckboxes.querySelectorAll(".checkbox");
-	function showOptions() {
-		optionsCheckboxes.style.display = "block";
-		console.log("showing options...");
+	function showOptions(element) {
+		element.style.display = "block";
+		console.log("showing...");
+	}
+	function hideOptions(element) {
+		element.style.display = "none";
+		console.log("hiding...");
 	}
 	function init () {
 		let switchId = optionsCheckboxes.querySelector(".checkbox:checked").id;
@@ -28,9 +32,15 @@ window.onload = function () {
 		}
 	}
 
-	emailForm.rcptAddr.addEventListener("click", showOptions);
-	emailForm.senderAddr.addEventListener("click", showOptions);
-	emailForm.senderName.addEventListener("click", showOptions);
+	emailForm.rcptAddr.addEventListener("click", function() {
+		showOptions(optionsCheckboxes);
+	});
+	emailForm.senderAddr.addEventListener("click", function() {
+		showOptions(optionsCheckboxes);
+	});
+	emailForm.senderName.addEventListener("click", function() {
+		showOptions(optionsCheckboxes);
+	});
 
 	for (let i = 0; i < radios.length; i++) {
 		radios[i].addEventListener("click", init);
