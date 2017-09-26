@@ -1,10 +1,10 @@
 window.onload = function () {
 	const emailForm = document.getElementById("emailForm");
 	const optionsCheckboxes = document.getElementById("options");
-	// function showOptions() {
-	// 	optionsCheckboxes.style.display = "block";
-	// 	console.log("showing options...");
-	// }
+	function showOptions() {
+		optionsCheckboxes.style.display = "block";
+		console.log("showing options...");
+	}
 	function init () {
 		let switchId = optionsCheckboxes.querySelector("input[type=radio]:checked").id;
 		let pp = document.getElementById("pp");
@@ -27,11 +27,8 @@ window.onload = function () {
 		}
 	}
 
-	emailForm.rcptAddr.addEventListener("click", function() {
-		optionsCheckboxes.style.display = "block";
-		console.log("showing options...");
-	});
-	/*emailForm.senderAddr.addEventListener("click", showOptions());
-	emailForm.senderName.addEventListener("click", showOptions());*/
+	emailForm.rcptAddr.addEventListener("click", showOptions);
+	emailForm.senderAddr.addEventListener("click", showOptions);
+	emailForm.senderName.addEventListener("click", showOptions);
 	// console.log(init())
 }
