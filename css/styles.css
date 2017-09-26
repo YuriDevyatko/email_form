@@ -4,6 +4,9 @@
 .options label {
 	display: block;
 }
+.options textarea {
+	display: none;
+}
 
 iframe {
 	display: none;

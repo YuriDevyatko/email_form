@@ -31,17 +31,18 @@
 		<input id="send" type="submit">
 
 		<div class="options" id="options">
-			<label><input type="radio" name="checkbox" id="checkbox1" value="checked1"> 1. Свободная форма</label>
-			<label><input type="radio" name="checkbox" id="checkbox2" value="checked2"> 2. Верные реквизиты (другие)</label>
-			<label><input type="radio" name="checkbox" id="checkbox3" value="checked3"> 3. Возврат на кошелек</label>
-			<label><input type="radio" name="checkbox" id="checkbox4" value="checked4"> 4. Возврат на мобильний Киевстар</label>
-			<label><input type="radio" name="checkbox" id="checkbox5" value="checked5" checked> 5. Повторное проведение</label>
-
+			<label><input type="radio" name="checkbox" class="checkbox" id="checkbox1" value="checked1"> 1. Свободная форма</label>
+			<label><input type="radio" name="checkbox" class="checkbox" id="checkbox2" value="checked2"> 2. Верные реквизиты (другие)</label>
+			<label><input type="radio" name="checkbox" class="checkbox" id="checkbox3" value="checked3"> 3. Возврат на кошелек</label>
+			<label><input type="radio" name="checkbox" class="checkbox" id="checkbox4" value="checked4"> 4. Возврат на мобильний Киевстар</label>
+			<label><input type="radio" name="checkbox" class="checkbox" id="checkbox5" value="checked5" checked> 5. Повторное проведение</label>
+			<input type="hidden" id="returnPath" name="returnPath" value="call-center@easypay.ua">
 			<input type="text" class="pp" id="pp" name="pp" placeholder="Платежное поручение" required disabled>
-			<textarea id = "rekv" name = "rekv" title="реквизиты - только для вложений 2-5" required></textarea>
+			<label><input type="checkbox" name="checkbox1" id="rekvEnable"> Реквизиты</label>
+			<textarea id = "rekv" name = "rekv" title="реквизиты - только для вложений 2-5"></textarea>
 		</div>
 	</form>
-	<iframe name="sms"></iframe>
+	<iframe id="results" name="sms"></iframe>
 </section>
 <script src="script/script.js"></script>
 </body>
