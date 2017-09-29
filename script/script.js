@@ -8,6 +8,7 @@ window.onload = function () {
 		element.style.display = "block";
 		if (element.id = rekv) {
 			element.required = true;
+			element.disabled = false;
 		}
 		console.log("showing...");
 	}
@@ -15,6 +16,7 @@ window.onload = function () {
 		element.style.display = "none";
 		if (element.id = rekv) {
 			element.required = false;
+			element.disabled = true;
 		}
 		console.log("hiding...");
 	}
