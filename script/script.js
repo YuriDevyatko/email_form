@@ -4,6 +4,7 @@ window.onload = function () {
 	const radios = optionsCheckboxes.querySelectorAll(".checkbox");
 	const rekvEnable = document.getElementById("rekvEnable");
 	const rekv = document.getElementById("rekv");
+	const closeBtn = document.getElementById("closeButton");
 	function showOptions(element) {
 		element.style.display = "block";
 		if (element.id = rekv) {
@@ -70,4 +71,7 @@ window.onload = function () {
 	}
 	rekvEnable.addEventListener("change", enablingOfRekvTextarea);
 	emailForm.addEventListener("submit", showResults);
+	closeBtn.addEventListener("click", function() {
+		hideOptions(optionsCheckboxes);
+	});
 }
