@@ -4,7 +4,9 @@ window.onload = function () {
 	const radios = optionsCheckboxes.querySelectorAll(".checkbox");
 	const rekvEnable = document.getElementById("rekvEnable");
 	const rekv = document.getElementById("rekv");
+	const pp = document.getElementById("pp");
 	const closeBtn = document.getElementById("closeButton");
+
 	function showOptions(element) {
 		element.style.display = "block";
 		if (element.id = rekv) {
@@ -23,7 +25,6 @@ window.onload = function () {
 	}
 	function init() {
 		let switchId = optionsCheckboxes.querySelector(".checkbox:checked").id;
-		let pp = document.getElementById("pp");
 		rekvEnable.checked = false;
 		hideOptions(rekv);
 		switch(switchId) {
@@ -56,6 +57,10 @@ window.onload = function () {
 		hideOptions(optionsCheckboxes);
 		showOptions(results);
 	}
+	function resetForm() {
+		pp.disabled = true;
+		hideOptions(rekv);
+	}
 	emailForm.rcptAddr.addEventListener("click", function() {
 		showOptions(optionsCheckboxes);
 	});
@@ -71,6 +76,7 @@ window.onload = function () {
 	}
 	rekvEnable.addEventListener("change", enablingOfRekvTextarea);
 	emailForm.addEventListener("submit", showResults);
+	emailForm.addEventListener("reset", resetForm);
 	closeBtn.addEventListener("click", function() {
 		hideOptions(optionsCheckboxes);
 	});
