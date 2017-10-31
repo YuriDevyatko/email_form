@@ -2,6 +2,7 @@ window.onload = function () {
 	const emailForm = document.getElementById("emailForm");
 	const optionsCheckboxes = document.getElementById("options");
 	const results = document.getElementById("results");
+	const inputFields = document.querySelectorAll(".inputs");
 	const radios = optionsCheckboxes.querySelectorAll(".checkbox");
 	const rekvEnable = document.getElementById("rekvEnable");
 	const rekv = document.getElementById("rekv");
@@ -73,25 +74,16 @@ window.onload = function () {
 		hideOptions(results);
 		hideOptions(timerText);
 	}
-	emailForm.rcptAddr.addEventListener("click", function() {
+	function initOptionsByInputs() {
 		showOptions(optionsCheckboxes);
 		clearTimeout(timerId);
 		hideOptions(results);
 		hideOptions(timerText);
-	});
-	emailForm.senderAddr.addEventListener("click", function() {
-		showOptions(optionsCheckboxes);
-		clearTimeout(timerId);
-		hideOptions(results);
-		hideOptions(timerText);
-	});
-	emailForm.senderName.addEventListener("click", function() {
-		showOptions(optionsCheckboxes);
-		clearTimeout(timerId);
-		hideOptions(results);
-		hideOptions(timerText);
-	});
+	}
 
+	for (let i = 0; i < inputFields.length; i++) {
+		inputFields[i].addEventListener("click", initOptionsByInputs);
+	}
 	for (let i = 0; i < radios.length; i++) {
 		radios[i].addEventListener("click", init);
 	}

@@ -8,9 +8,9 @@
 <body>
 <section class="email">
 	<form action="#" id="emailForm" method="post" name="emailForm" target="sms">
-		<label>Кому: <input type="email" id="rcptAddr" name="rcptAddr" placeholder="Email..." required></label>
+		<label>Кому: <input type="email" id="rcptAddr" class="inputs" name="rcptAddr" placeholder="Email..." required></label>
 		<label>От:
-			<select id="senderAddr" name="senderAddr" required>
+			<select id="senderAddr" class="inputs" name="senderAddr" required>
 				<option selected></option>
 				<option value="operator1@easypay.ua">operator1@easypay.ua</option>
 				<option value="operator2@easypay.ua">operator2@easypay.ua</option>
@@ -27,7 +27,7 @@
 				<option value="operator13@easypay.ua">operator13@easypay.ua</option>
 			</select>
 		</label>
-		<label>Имя: <input type="text" id="senderName" name="senderName" placeholder="Оператор EasyPay.UA"></label>
+		<label>Имя: <input type="text" id="senderName" class="inputs" name="senderName" placeholder="Оператор EasyPay.UA"></label>
 		<input id="send" type="submit">
 		<input type="reset">
 
