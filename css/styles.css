@@ -8,6 +8,10 @@
 	display: none;
 }
 
+.timer {
+	display: none;
+}
+
 iframe {
 	display: none;
 }

@@ -7,6 +7,7 @@ window.onload = function () {
 	const rekv = document.getElementById("rekv");
 	const pp = document.getElementById("pp");
 	const closeBtn = document.getElementById("closeButton");
+	const timerText = document.querySelector(".timer");
 
 	function showOptions(element) {
 		element.style.display = "block";
@@ -53,34 +54,52 @@ window.onload = function () {
 			hideOptions(rekv);
 		}
 	}
+
+	let timerId;
 	function showResults() {
 		hideOptions(optionsCheckboxes);
+		showOptions(timerText);
 		showOptions(results);
+		timerId = setTimeout(function() {
+			hideOptions(results);
+			hideOptions(timerText);
+		}, 10000);
 	}
 	function resetForm() {
 		pp.disabled = true;
 		hideOptions(rekv);
 		hideOptions(optionsCheckboxes);
+		clearTimeout(timerId);
 		hideOptions(results);
+		hideOptions(timerText);
 	}
 	emailForm.rcptAddr.addEventListener("click", function() {
 		showOptions(optionsCheckboxes);
+		clearTimeout(timerId);
 		hideOptions(results);
+		hideOptions(timerText);
 	});
 	emailForm.senderAddr.addEventListener("click", function() {
 		showOptions(optionsCheckboxes);
+		clearTimeout(timerId);
 		hideOptions(results);
+		hideOptions(timerText);
 	});
 	emailForm.senderName.addEventListener("click", function() {
 		showOptions(optionsCheckboxes);
+		clearTimeout(timerId);
 		hideOptions(results);
+		hideOptions(timerText);
 	});
 
 	for (let i = 0; i < radios.length; i++) {
 		radios[i].addEventListener("click", init);
 	}
 	rekvEnable.addEventListener("change", enablingOfRekvTextarea);
-	emailForm.addEventListener("submit", showResults);
+	emailForm.addEventListener("submit", function() {
+		clearTimeout(timerId);
+		showResults();
+	});
 	emailForm.addEventListener("reset", resetForm);
 	closeBtn.addEventListener("click", function() {
 		hideOptions(optionsCheckboxes);
