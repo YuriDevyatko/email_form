@@ -1,6 +1,7 @@
 window.onload = function () {
 	const emailForm = document.getElementById("emailForm");
 	const optionsCheckboxes = document.getElementById("options");
+	const results = document.getElementById("results");
 	const radios = optionsCheckboxes.querySelectorAll(".checkbox");
 	const rekvEnable = document.getElementById("rekvEnable");
 	const rekv = document.getElementById("rekv");
@@ -53,22 +54,26 @@ window.onload = function () {
 		}
 	}
 	function showResults() {
-		let results = document.getElementById("results");
 		hideOptions(optionsCheckboxes);
 		showOptions(results);
 	}
 	function resetForm() {
 		pp.disabled = true;
 		hideOptions(rekv);
+		hideOptions(optionsCheckboxes);
+		hideOptions(results);
 	}
 	emailForm.rcptAddr.addEventListener("click", function() {
 		showOptions(optionsCheckboxes);
+		hideOptions(results);
 	});
 	emailForm.senderAddr.addEventListener("click", function() {
 		showOptions(optionsCheckboxes);
+		hideOptions(results);
 	});
 	emailForm.senderName.addEventListener("click", function() {
 		showOptions(optionsCheckboxes);
+		hideOptions(results);
 	});
 
 	for (let i = 0; i < radios.length; i++) {
